@@ -54,8 +54,9 @@ public class SolverTest extends TestCase {
             // Initialize the Board and Solver with the read tiles
             board = new Board(tiles);
             solver = new Solver(board);
-            integralValueOfDesiredAnswer = Integer.parseInt(desiredAnswer);
-
+            if (desiredAnswer.equals("|")){
+                integralValueOfDesiredAnswer = -1;
+            } else integralValueOfDesiredAnswer = Integer.parseInt(desiredAnswer);
         } catch (IOException e) {
             e.printStackTrace(); // Handle the exception as needed
         } catch (NumberFormatException e) {
